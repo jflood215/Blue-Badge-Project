@@ -1,9 +1,10 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 const WeightTable = (props) => {
   const deleteWeight = (weight) => {
-    fetch(`http://localhost:3000/weight/entry/${weight.id}`, {
+    fetch(`${APIURL}/weight/entry/${weight.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

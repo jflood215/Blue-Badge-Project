@@ -9,6 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 const WeightEdit = (props) => {
   const [editDate, setEditDate] = useState(props.weightToUpdate.date);
@@ -16,7 +17,7 @@ const WeightEdit = (props) => {
 
   const weightUpdate = (event, weight) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/weight/entry/${props.weightToUpdate.id}`, {
+    fetch(`${APIURL}/weight/entry/${props.weightToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         weight: { date: editDate, weight: editWeight },

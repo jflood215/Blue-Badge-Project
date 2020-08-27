@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 const WeightCreate = (props) => {
   const [date, setDate] = useState("");
@@ -8,7 +9,7 @@ const WeightCreate = (props) => {
   console.log(props.token);
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/weight/entry", {
+    fetch(`${APIURL}/weight/entry`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
