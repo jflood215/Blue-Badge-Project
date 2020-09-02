@@ -15,7 +15,7 @@ const WeightCreate = (props) => {
         "Content-Type": "application/json",
         Authorization: props.token,
       }),
-      body: JSON.stringify({ weight: { date: date, weight: weight } }), // change model name?
+      body: JSON.stringify({ weight: { date: date, weight: weight } }),
     })
       .then((res) => res.json())
       .then((weightData) => {

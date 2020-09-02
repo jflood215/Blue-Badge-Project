@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useHistory } from "react-router-dom";
 import APIURL from "../helpers/environment";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
+  // const [isLogin, setIsLogin] = useState(true);
+
+  // const title = isLogin ? "Login" : "Sign Up";
 
   let handleSubmit = (event) => {
     event.preventDefault();
@@ -20,22 +25,29 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
+        history.push("/macros");
       });
   };
 
-  return (
-    <div>
-      {/* <ImageBackground
-        source={require("../assets/photo-1490818387583-1baba5e638af.jpg")}
-        style={{ width: 400, height: 400 }}
-      /> */}
+  // function toggle(e) {
+  //   e.preventDefault();
+  //   if (isLogin === true) {
+  //     setIsLogin(false);
+  //   } else {
+  //     setIsLogin(true);
+  //   }
+  // }
 
+  return (
+    <div style={{ backgroundColor: "rgba(242,245,246,0.47)" }}>
       <h1>Login</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
           <Input
             onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            required
             name="email"
             value={email}
           />
@@ -53,6 +65,8 @@ const Login = (props) => {
         <Button color="primary" type="submit">
           Login
         </Button>
+
+        <br />
       </Form>
     </div>
   );

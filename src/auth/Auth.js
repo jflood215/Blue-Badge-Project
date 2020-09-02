@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Toast,
+  ToastHeader,
+  ToastBody,
+} from "reactstrap";
+import "../../src/App.css";
 import Login from "./Login";
 import Signup from "./Signup";
 
 const Auth = (props) => {
   const [isLogin, setIsLogin] = useState(true);
-  // const [textColor, setTextColor] = useState("blue");
 
   const title = isLogin ? "Login" : "Sign Up";
-  // const componentCall = isLogin ? Signup : Login
 
   function toggle(e) {
     e.preventDefault();
@@ -19,21 +26,44 @@ const Auth = (props) => {
     }
   }
   return (
-    <Container className="auth" id="a">
+    <Container className="auth">
       <Row>
         <Col></Col>
-        <Col md="6 text-center border border-dark rounded pb-1">
+        <Col md="6 text-center border border-dark rounded pb-2">
           {isLogin ? (
             <Login updateToken={props.updateToken} />
           ) : (
             <Signup updateToken={props.updateToken} />
           )}
-          <Button color="warning" onClick={(e) => toggle(e)}>
+          <Button
+            style={{
+              marginTop: "1px",
+            }}
+            id="orange"
+            onClick={(e) => toggle(e)}
+          >
             Toggle Sign Up/Login
           </Button>
-          <br />
         </Col>
-        <Col></Col>
+
+        <Col>
+          <div className="p-3 mt-4 my-2 rounded">
+            <Toast
+              style={{
+                backgroundColor: "rgba(255,255,255,.82)",
+                boxShadow: "0 0.5em 1em 0",
+              }}
+            >
+              <ToastHeader>Welcome!</ToastHeader>
+              <ToastBody>
+                This app is designed to help you reach your health and wellness
+                goals by optimizing calorie and macro intake, providing recipe
+                and meal inspiration, and quantifying progress via an advanced
+                weight tracker.
+              </ToastBody>
+            </Toast>
+          </div>
+        </Col>
       </Row>
     </Container>
   );

@@ -10,7 +10,7 @@ const WeightIndex = (props) => {
   const [updateActive, setUpdateActive] = useState(false);
   const [weightToUpdate, setWeightToUpdate] = useState({});
   const fetchWeights = () => {
-    fetch(`${APIURL}:3000/weight/entry/`, {
+    fetch(`${APIURL}/weight/entry/`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -44,10 +44,10 @@ const WeightIndex = (props) => {
   return (
     <Container>
       <Row>
-        <Col md="3">
+        <Col md="3 text-center">
           <WeightCreate fetchWeights={fetchWeights} token={props.token} />
         </Col>
-        <Col md="9">
+        <Col md="9 text-center">
           <WeightTable
             weights={weights}
             editUpdateWeight={editUpdateWeight}
