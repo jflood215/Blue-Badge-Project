@@ -36,7 +36,7 @@ const Signup = (props) => {
   // }
 
   return (
-    <div style={{ backgroundColor: "rgba(242,245,246,0.47)" }}>
+    <div style={{ backgroundColor: "rgba(242,245,246,0.5)" }}>
       <h1>Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>

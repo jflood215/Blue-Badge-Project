@@ -13,6 +13,7 @@ import { Route, Link, Switch, Redirect } from "react-router-dom";
 import MacroCreate from "../MacroIndex/MacroCreate";
 import RecipeIndex from "../RecipeAPI/RecipeIndex";
 import WeightTable from "../WeightIndex/WeightTable";
+import WeightIndex from "../WeightIndex/WeightIndex";
 import AppIndex from "../AppIndex/AppIndex";
 import "../../src/App.css";
 
@@ -86,7 +87,7 @@ const Sitebar = (props) => {
             <RecipeIndex token={props.token} />
           </Route>
           <Route exact path="/weights">
-            <WeightTable token={props.token} />
+            <WeightIndex token={props.token} />
           </Route>
         </Switch>
       </div>

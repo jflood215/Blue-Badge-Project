@@ -44,10 +44,16 @@ const WeightIndex = (props) => {
   return (
     <Container>
       <Row>
-        <Col md="3 text-center">
+        <Col md="4 mt-4">
           <WeightCreate fetchWeights={fetchWeights} token={props.token} />
         </Col>
-        <Col md="9 text-center">
+        <Col
+          style={{
+            backgroundColor: "rgba(255,255,255,.5",
+            boxShadow: "0 0.5em 1em 0",
+          }}
+          md="8 text-center mt-2"
+        >
           <WeightTable
             weights={weights}
             editUpdateWeight={editUpdateWeight}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
 import APIURL from "../helpers/environment";
 
 const WeightCreate = (props) => {
@@ -28,9 +28,17 @@ const WeightCreate = (props) => {
   };
 
   return (
-    <>
-      <h3>Enter a Weight</h3>
-      <Form onSubmit={handleSubmit}>
+    <div
+      style={{
+        backgroundColor: "rgba(255,255,255,.55",
+
+        boxShadow: "0 0.5em 1em 0",
+        marginTop: "0.7em",
+      }}
+    >
+      <h3 style={{ textAlign: "center" }}>Enter a Weight</h3>
+      <hr />
+      <Form style={{ padding: "0.8em" }} onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="date" />
           <Input
@@ -50,10 +58,10 @@ const WeightCreate = (props) => {
           ></Input>
         </FormGroup>
         <Button color="primary" type="submit">
-          Click to Submit
+          Submit
         </Button>
       </Form>
-    </>
+    </div>
   );
 };
 

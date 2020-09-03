@@ -58,8 +58,8 @@ const Auth = (props) => {
               <ToastBody>
                 This app is designed to help you reach your health and wellness
                 goals by optimizing calorie and macro intake, providing recipe
-                and meal inspiration, and quantifying progress via an advanced
-                weight tracker.
+                and meal inspiration, and quantifying progress by tracking
+                changes in your weight.
               </ToastBody>
             </Toast>
           </div>

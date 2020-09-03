@@ -17,6 +17,7 @@ import {
   CardSubtitle,
   CardColumns,
   FormText,
+  CardDeck,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import MacroCreate from "../MacroIndex/MacroCreate";
@@ -32,6 +33,7 @@ const RecipeIndex = () => {
   const [resultsTwo, setResultsTwo] = useState([]);
   const [minCals, setMinCals] = useState("");
   const [maxCals, setMaxCals] = useState("");
+  const [fetchComplete, setFetchComplete] = useState(false);
 
   const fetchResults = () => {
     let url = `${fetchURL}?q=${search}&app_id=${app_id}&app_key=${app_key}&from=0&to=2&ingr=7`;
@@ -45,8 +47,10 @@ const RecipeIndex = () => {
       .then((res) => res.json())
       .then((jsonData) => {
         console.log(jsonData);
-        setResults(jsonData.hits[0].recipe);
-        setResultsTwo(jsonData.hits[1].recipe); // or just jsonData?
+        setResults(jsonData.hits[0]);
+        setResultsTwo(jsonData.hits[1]);
+
+        setFetchComplete(true);
       });
   };
 
@@ -69,10 +73,10 @@ const RecipeIndex = () => {
             <Col md="5">
               <Form
                 style={{
-                  backgroundColor: "rgba(255,255,255,.52",
+                  backgroundColor: "rgba(255,255,255,.6",
                   padding: "0.5em",
                   boxShadow: "0 0.5em 1em 0",
-                  marginTop: "0.8em",
+                  marginTop: "0.7em",
                 }}
                 onSubmit={(e) => handleSubmit(e)}
               >
@@ -110,56 +114,90 @@ const RecipeIndex = () => {
                   <br />
                   <hr />
                   <FormText style={{ color: "black" }} id="formtext">
-                    This form will allow you to connect to one of the largest
-                    recipe databases in the world for fresh, new meal ideas.
-                    Please enter a type of food to get started. You may also add
-                    a calorie range for the meal, or select a minimum or maximum
-                    only. To prevent information overload, two options will be
-                    displayed on the right side of the screen. Have fun!
+                    This form will allow you to connect to one of the most
+                    comprehensive recipe databases in the world for fresh, new
+                    meal ideas. Please enter a type of food to get started. You
+                    may also add a calorie range for the meal, or select a
+                    minimum and/or maximum. To prevent information overload, two
+                    options will be displayed on the right side of the screen.
+                    Have fun!
                   </FormText>
                   <hr />
-                  <Button className="submit" id="orange">
+                  <Button
+                    style={{ marginLeft: "0.5em" }}
+                    className="submit"
+                    color="primary"
+                  >
                     Search
                   </Button>
                 </FormGroup>
               </Form>
             </Col>
-            <Col md="4 pt-4">
-              <Card style={{ boxShadow: "0 0.5em 1em 0" }}>
-                <CardImg
-                  top
-                  width="100%"
-                  src={results.image}
-                  alt="Card image cap"
-                />
-                <CardBody>
-                  <CardTitle>{results.label}</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </CardText>
-                  <Button color="primary">Details</Button>
-                </CardBody>
-              </Card>
-              <Card style={{ marginTop: "1em", boxShadow: "0 0.5em 1em 0" }}>
-                <CardImg
-                  top
-                  width="100%"
-                  src={resultsTwo.image}
-                  alt="Card image cap"
-                />
-                <CardBody>
-                  <CardTitle>{resultsTwo.label}</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </CardText>
-                  <Button color="primary">Details</Button>
-                </CardBody>
-              </Card>
-            </Col>
+            {fetchComplete ? (
+              <Col md="4 pt-1">
+                <Card style={{ boxShadow: "0 0.5em 1em 0" }}>
+                  <CardImg
+                    style={{
+                      height: "13.5em",
+                      width: "96%",
+                      paddingLeft: "1em",
+                      paddingTop: "0.1em",
+                    }}
+                    top
+                    width="60%"
+                    src={results.recipe.image}
+                    alt="Card image cap"
+                  />
+                  <CardBody>
+                    <CardTitle>{results.recipe.label}</CardTitle>
+                    <CardSubtitle>
+                      {/* {results.recipe.dietLabels.join(", ")} */}
+                    </CardSubtitle>
+                    <CardText></CardText>
+                    <Button
+                      color="primary"
+                      href={results.recipe.url}
+                      target="blank"
+                    >
+                      See Recipe
+                    </Button>
+                  </CardBody>
+                </Card>
+
+                <Card
+                  style={{ marginTop: "0.5em", boxShadow: "0 0.5em 1em 0" }}
+                >
+                  <CardImg
+                    style={{
+                      height: "13.5em",
+                      width: "96%",
+                      paddingLeft: "1em",
+                      paddingTop: "0.1em",
+                    }}
+                    top
+                    width="50%"
+                    src={resultsTwo.recipe.image}
+                    alt="Card image cap"
+                  />
+                  <CardBody>
+                    <CardTitle>{resultsTwo.recipe.label}</CardTitle>
+                    <CardSubtitle>
+                      {/* {resultsTwo.recipe.healthLabels.join(", ")} */}
+                    </CardSubtitle>
+                    {/* <CardText> {results.recipe.dietLabels.join(", ")}</CardText> */}
+                    <Button
+                      color="primary"
+                      href={resultsTwo.recipe.url}
+                      target="blank"
+                    >
+                      See Recipe
+                    </Button>
+                  </CardBody>
+                </Card>
+              </Col>
+            ) : (
+              <></>
+            )}
           </Row>
         </Container>
       </div>
@@ -168,44 +206,3 @@ const RecipeIndex = () => {
 };
 
 export default RecipeIndex;
-
-// style={{ marginTop: "1em", boxShadow: "0 0.5em 1em 0" }} Top of Card
-
-//  <CardColumns>{displayCards()}</CardColumns>
-
-/*
- <Card style={{ boxShadow: "0 0.5em 1em 0" }}>
-                  <CardImg
-                    top
-                    width="100%"
-                    src="/assets/318x180.svg"
-                    alt="Card image cap"
-                  />
-                  <CardBody>
-                    <CardTitle></CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </CardText>
-                    <Button color="primary">Details</Button>
-                  </CardBody>
-                </Card>
-                <Card style={{ marginTop: "1em", boxShadow: "0 0.5em 1em 0" }}>
-                  <CardImg
-                    top
-                    width="100%"
-                    src="/assets/318x180.svg"
-                    alt="Card image cap"
-                  />
-                  <CardBody>
-                    <CardTitle>Title goes here!</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </CardText>
-                    <Button color="primary">Details</Button>
-                  </CardBody>
-                </Card>
-                */

@@ -10,7 +10,6 @@ const AppIndex = (props) => {
     <div>
       {/* <h1 style={{ color: "black", textAlign: "center" }}>Welcome!</h1> */}
       {/* <MacroCreate token={props.token} /> */}
-
       {/* <hr /> */}
       {/* <br />
       <hr />

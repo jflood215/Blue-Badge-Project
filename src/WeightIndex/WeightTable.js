@@ -18,9 +18,8 @@ const WeightTable = (props) => {
     return props.weights.map((weight, index) => {
       return (
         <tr key={index}>
-          <th scope="row">{weight.id}</th>
-          <td>{weight.date}</td>
-          <td>{weight.weight}</td>
+          <th scope="row">{weight.date}</th>
+          <td>{weight.weight} pounds</td>
           <td>
             <Button
               color="primary"
@@ -55,7 +54,7 @@ const WeightTable = (props) => {
             {/* <th>#</th> */}
             <th>Date</th>
             <th>Weight</th>
-            <th>Edit/Delete</th>
+            <th>Edit or Delete</th>
           </tr>
         </thead>
         <tbody>{weightMapper()}</tbody>

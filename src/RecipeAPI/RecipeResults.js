@@ -13,7 +13,7 @@ const RecipeResults = (props) => {
   const { label, image } = props.food;
   return (
     <div>
-      <Card>
+      {/* <Card>
         <CardImg top width="100%" src={image} alt="Card image cap" />
         <CardBody>
           <CardTitle>{label}</CardTitle>
@@ -24,7 +24,7 @@ const RecipeResults = (props) => {
           </CardText>
           <Button color="primary">Details</Button>
         </CardBody>
-      </Card>
+      </Card> */}
     </div>
   );
 };

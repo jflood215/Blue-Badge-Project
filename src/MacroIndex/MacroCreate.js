@@ -63,7 +63,7 @@ const MacroCreate = (props) => {
         <Col sm="6 mt-1">
           <Form
             style={{
-              backgroundColor: "rgba(255,255,255,.5",
+              backgroundColor: "rgba(255,255,255,.55",
               padding: "0.5em",
               boxShadow: "0 0.5em 1em 0",
             }}
@@ -169,7 +169,7 @@ const MacroCreate = (props) => {
                   type="radio"
                   id="exampleCustomRadio2"
                   name="activityRadio"
-                  label="Light Activity"
+                  label="Low"
                   value="1.375"
                 />
                 <CustomInput
@@ -180,7 +180,7 @@ const MacroCreate = (props) => {
                   type="radio"
                   id="exampleCustomRadio3"
                   name="activityRadio"
-                  label="Moderate Activity"
+                  label="Medium"
                   value="1.55"
                 />
                 <CustomInput
@@ -191,7 +191,7 @@ const MacroCreate = (props) => {
                   type="radio"
                   id="exampleCustomRadio4"
                   name="activityRadio"
-                  label="High Activity"
+                  label="High"
                   value="1.725"
                 />
               </div>
@@ -252,12 +252,17 @@ const MacroCreate = (props) => {
         </Col>
         <Col sm="3 pt-5">
           <div className="p-2 my-2 rounded">
-            <Toast style={{ boxShadow: "0 0.5em 1em 0" }}>
+            <Toast
+              style={{
+                boxShadow: "0 0.5em 1em 0",
+                backgroundColor: "rgba(255,255,255,.82)",
+              }}
+            >
               <ToastHeader>Activity FAQ</ToastHeader>
               <ToastBody>
-                Light activity = Light exercise/sports 1-3 days/week
+                Low activity = Light exercise/sports 1-3 days/week
                 <hr />
-                Moderate activity = Moderate exercise/sports 3-5 days/week
+                Medium activity = Moderate exercise/sports 3-5 days/week
                 <hr />
                 High activity = High intensity exercise/sports 6-7 days/week
               </ToastBody>
