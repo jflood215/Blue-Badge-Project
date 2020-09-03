@@ -63,7 +63,7 @@ const MacroCreate = (props) => {
         <Col sm="6 mt-1">
           <Form
             style={{
-              backgroundColor: "rgba(255,255,255,.55",
+              backgroundColor: "rgba(255,255,255,.58",
               padding: "0.5em",
               boxShadow: "0 0.5em 1em 0",
             }}
@@ -255,7 +255,7 @@ const MacroCreate = (props) => {
             <Toast
               style={{
                 boxShadow: "0 0.5em 1em 0",
-                backgroundColor: "rgba(255,255,255,.82)",
+                backgroundColor: "rgba(255,255,255,.8)",
               }}
             >
               <ToastHeader>Activity FAQ</ToastHeader>

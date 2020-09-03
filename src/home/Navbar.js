@@ -34,7 +34,7 @@ const Sitebar = (props) => {
             className="links"
             href="/macros"
           >
-            Blue Badge Project
+            Macros Made Easy
           </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>

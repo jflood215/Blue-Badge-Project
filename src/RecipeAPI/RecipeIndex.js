@@ -73,7 +73,7 @@ const RecipeIndex = () => {
             <Col md="5">
               <Form
                 style={{
-                  backgroundColor: "rgba(255,255,255,.6",
+                  backgroundColor: "rgba(255,255,255,.61",
                   padding: "0.5em",
                   boxShadow: "0 0.5em 1em 0",
                   marginTop: "0.7em",

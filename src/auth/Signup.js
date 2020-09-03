@@ -36,11 +36,11 @@ const Signup = (props) => {
   // }
 
   return (
-    <div style={{ backgroundColor: "rgba(242,245,246,0.5)" }}>
+    <div style={{ backgroundColor: "rgba(242,245,246,0.53)" }}>
       <h1>Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">Email:</Label>
           <Input
             onChange={(e) => {
               setEmail(e.target.value);
@@ -52,7 +52,7 @@ const Signup = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">Password:</Label>
           <Input
             onChange={(e) => {
               setPassword(e.target.value);

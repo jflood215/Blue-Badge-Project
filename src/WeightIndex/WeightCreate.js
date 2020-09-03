@@ -30,7 +30,7 @@ const WeightCreate = (props) => {
   return (
     <div
       style={{
-        backgroundColor: "rgba(255,255,255,.55",
+        backgroundColor: "rgba(255,255,255,.6",
 
         boxShadow: "0 0.5em 1em 0",
         marginTop: "0.7em",
@@ -40,7 +40,7 @@ const WeightCreate = (props) => {
       <hr />
       <Form style={{ padding: "0.8em" }} onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="date" />
+          <Label htmlFor="date">Date:</Label>
           <Input
             type="date"
             name="date"
@@ -49,7 +49,7 @@ const WeightCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="weight" />
+          <Label htmlFor="weight">Weight:</Label>
           <Input
             type="number"
             name="weight"

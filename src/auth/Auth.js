@@ -42,7 +42,7 @@ const Auth = (props) => {
             id="orange"
             onClick={(e) => toggle(e)}
           >
-            Toggle Sign Up/Login
+            Need to Sign Up?
           </Button>
         </Col>
 
@@ -50,7 +50,7 @@ const Auth = (props) => {
           <div className="p-3 mt-4 my-2 rounded">
             <Toast
               style={{
-                backgroundColor: "rgba(255,255,255,.82)",
+                backgroundColor: "rgba(255,255,255,.8)",
                 boxShadow: "0 0.5em 1em 0",
               }}
             >
