@@ -42,7 +42,7 @@ const Auth = (props) => {
             id="orange"
             onClick={(e) => toggle(e)}
           >
-            Need to Sign Up?
+            Toggle Login/Sign Up
           </Button>
         </Col>
 
