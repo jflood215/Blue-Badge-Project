@@ -38,7 +38,7 @@ const RecipeIndex = () => {
   const fetchResults = () => {
     let url = `${fetchURL}?q=${search}&app_id=${app_id}&app_key=${app_key}&from=0&to=2&ingr=7`;
 
-    url = minCals || maxCals ? url + `&calories=${minCals}-${maxCals}` : url;
+    url = minCals && maxCals ? url + `&calories=${minCals}-${maxCals}` : url;
     // url = maxCals ? url + `&calories=${maxCals}` : url;
 
     // https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&calories=591-722
@@ -99,7 +99,7 @@ const RecipeIndex = () => {
                     inline
                     type="number"
                     name="minCals"
-                    placeholder="This field is optional"
+                    placeholder="Enter a number"
                     onChange={(e) => setMinCals(e.target.value)}
                   />
                   <br />
@@ -108,7 +108,7 @@ const RecipeIndex = () => {
                     inline
                     type="number"
                     name="maxCals"
-                    placeholder="This field is optional"
+                    placeholder="Enter a number"
                     onChange={(e) => setMaxCals(e.target.value)}
                   />
                   <br />
@@ -117,10 +117,9 @@ const RecipeIndex = () => {
                     This form will allow you to connect to one of the most
                     comprehensive recipe databases in the world for fresh, new
                     meal ideas. Please enter a type of food to get started. You
-                    may also add a calorie range for the meal, or select a
-                    minimum and/or maximum. To prevent information overload, two
-                    options will be displayed on the right side of the screen.
-                    Have fun!
+                    may also add a calorie range for the meal to narrow your
+                    search. To prevent information overload, two options will be
+                    displayed on the right side of the screen. Have fun!
                   </FormText>
                   <hr />
                   <Button
