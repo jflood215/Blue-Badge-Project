@@ -8,12 +8,14 @@ import MacroCreate from "./MacroIndex/MacroCreate";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
+  // const [isAutheticated, setisAutheticated] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setSessionToken(localStorage.getItem("token"));
     }
   }, []);
+  console.log(sessionToken);
 
   const updateToken = (newToken) => {
     localStorage.setItem("token", newToken);

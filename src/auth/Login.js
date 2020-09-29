@@ -7,9 +7,6 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
-  // const [isLogin, setIsLogin] = useState(true);
-
-  // const title = isLogin ? "Login" : "Sign Up";
 
   let handleSubmit = (event) => {
     event.preventDefault();
@@ -28,15 +25,6 @@ const Login = (props) => {
         history.push("/macros");
       });
   };
-
-  // function toggle(e) {
-  //   e.preventDefault();
-  //   if (isLogin === true) {
-  //     setIsLogin(false);
-  //   } else {
-  //     setIsLogin(true);
-  //   }
-  // }
 
   return (
     <div style={{ backgroundColor: "rgba(242,245,246,0.53)" }}>

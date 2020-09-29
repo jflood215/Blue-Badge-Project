@@ -5,9 +5,6 @@ import APIURL from "../helpers/environment";
 const Signup = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [isLogin, setIsLogin] = useState(true);
-
-  // const title = isLogin ? "Login" : "Sign Up";
 
   let handleSubmit = (event) => {
     event.preventDefault();

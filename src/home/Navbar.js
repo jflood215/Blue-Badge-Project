@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -16,15 +16,75 @@ import WeightTable from "../WeightIndex/WeightTable";
 import WeightIndex from "../WeightIndex/WeightIndex";
 import AppIndex from "../AppIndex/AppIndex";
 import "../../src/App.css";
+import GuardedRoute from "./GuardedRoute";
 
 const Sitebar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    console.log(props);
+  }, []);
+  // const [isAutheticated, setisAutheticated] = useState(false);
+
+  // function login() {
+  //   setisAutheticated(true);
+  //   console.log("loggedInUser:" + isAutheticated);
+  // }
+
+  // function logout() {
+  //   setisAutheticated(false);
+  //   console.log("loggedInUser:" + isAutheticated);
+  // }
 
   const toggle = () => {
     let newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
   };
 
+  // const MyRouter = (props) => {
+  //   useEffect(() => {
+  //     console.log(props);
+  //   }, []);
+
+  const showWeights = () => {
+    let storedToken = localStorage.getItem("token");
+    console.log(storedToken);
+    return storedToken !== null || storedToken === undefined ? (
+      <Route exact path="/weights">
+        <WeightIndex token={props.token} />
+      </Route>
+    ) : (
+      <Route>
+        <Redirect to="/" />
+      </Route>
+    );
+  };
+
+  const showMacros = () => {
+    let storedToken = localStorage.getItem("token");
+    console.log(storedToken);
+    return storedToken !== null || storedToken === undefined ? (
+      <Route exact path="/macros">
+        <MacroCreate token={props.token} />
+      </Route>
+    ) : (
+      <Route>
+        <Redirect to="/" />
+      </Route>
+    );
+  };
+  const showRecipes = () => {
+    let storedToken = localStorage.getItem("token");
+    console.log(storedToken);
+    return storedToken !== null || storedToken === undefined ? (
+      <Route exact path="/recipes">
+        <RecipeIndex token={props.token} />
+      </Route>
+    ) : (
+      <Route>
+        <Redirect to="/" />
+      </Route>
+    );
+  };
   return (
     <Fragment>
       <div>
@@ -81,13 +141,13 @@ const Sitebar = (props) => {
       <div>
         <Switch>
           <Route exact path="/macros">
-            <MacroCreate token={props.token} />
+            {showMacros()}
           </Route>
           <Route exact path="/recipes">
-            <RecipeIndex token={props.token} />
+            {showRecipes()}
           </Route>
           <Route exact path="/weights">
-            <WeightIndex token={props.token} />
+            {showWeights()}
           </Route>
         </Switch>
       </div>
