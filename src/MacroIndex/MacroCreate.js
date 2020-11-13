@@ -230,7 +230,7 @@ const MacroCreate = (props) => {
                   id="exampleCustomRadio7"
                   name="goalRadio"
                   label="Lose Weight/Fat"
-                  value="-350"
+                  value="-500"
                 />
               </div>
             </FormGroup>
