@@ -47,7 +47,7 @@ const Sitebar = (props) => {
 
   const showWeights = () => {
     let storedToken = localStorage.getItem("token");
-    return storedToken !== null || storedToken !== undefined ? (
+    return storedToken !== null || storedToken === undefined ? (
       <Route exact path="/weights">
         <WeightIndex token={props.token} />
       </Route>
@@ -60,7 +60,7 @@ const Sitebar = (props) => {
 
   const showMacros = () => {
     let storedToken = localStorage.getItem("token");
-    return storedToken !== null || storedToken !== undefined ? (
+    return storedToken !== null || storedToken === undefined ? (
       <Route exact path="/macros">
         <MacroCreate token={props.token} />
       </Route>
@@ -74,7 +74,7 @@ const Sitebar = (props) => {
   
   const showRecipes = () => {
     let storedToken = localStorage.getItem("token");
-    return storedToken !== null || storedToken !== undefined ? (
+    return storedToken !== null || storedToken === undefined ? (
       <Route exact path="/recipes">
         <RecipeIndex token={props.token} />
       </Route>
