@@ -36,21 +36,27 @@ const MacroCreate = () => {
     }
   };
 
+  const proteinRatio = 0.22; // 22% of calories from protein to balance muscle building with longevity
+
   const protein = () => {
     if (height) {
-      return Math.round((calories() * 0.22) / 4);
+      return Math.round((calories() * proteinRatio) / 4);
     }
   };
+
+  const fatRatio = 0.3; // 30% of calories from fat
 
   const fat = () => {
     if (height) {
-      return Math.round((calories() * 0.3) / 9);
+      return Math.round((calories() * fatRatio) / 9);
     }
   };
 
+  const carbRatio = 0.48; // 48% calories from carbs
+
   const carbs = () => {
     if (height) {
-      return Math.round((calories() * 0.48) / 4);
+      return Math.round((calories() * carbRatio) / 4);
     }
   };
 
