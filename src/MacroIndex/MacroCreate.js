@@ -37,13 +37,13 @@ const MacroCreate = () => {
   };
 
   const protein = () => {
-    if (height > 1) {
+    if (height) {
       return Math.round((calories() * 0.22) / 4);
     }
   };
 
   const fat = () => {
-    if (height > 1) {
+    if (height) {
       return Math.round((calories() * 0.3) / 9);
     }
   };
@@ -168,7 +168,7 @@ const MacroCreate = () => {
                   id="exampleCustomRadio"
                   name="activityRadio"
                   label="None"
-                  value="1.2"
+                  value="1.2" // Activity modifier
                 />
                 <CustomInput
                   onClick={(e) => {
