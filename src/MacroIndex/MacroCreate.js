@@ -14,10 +14,8 @@ import {
   ToastHeader,
   ToastBody,
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import RecipeIndex from "../RecipeAPI/RecipeIndex";
 
-const MacroCreate = (props) => {
+const MacroCreate = () => {
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
   const [age, setAge] = useState("");
@@ -75,7 +73,7 @@ const MacroCreate = (props) => {
               <hr />
 
               <div className="concise">
-                <Label for="exampleCheckbox2" style={{ paddingRight: "3em" }}>
+                <Label for="gender" style={{ paddingRight: "3em" }}>
                   Gender:
                 </Label>
 
@@ -88,7 +86,7 @@ const MacroCreate = (props) => {
                   inline
                   type="radio"
                   id="exampleCustomRadio5"
-                  name="customRadio3"
+                  name="genderRadio"
                   label="Male"
                   value="Male"
                 />
@@ -99,7 +97,7 @@ const MacroCreate = (props) => {
                   inline
                   type="radio"
                   id="exampleCustomRadio6"
-                  name="customRadio3"
+                  name="genderRadio"
                   label="Female"
                   value="Female"
                 />
