@@ -22,7 +22,8 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
-        history.push("/");
+        history.push("/")
+        history.push("/macros")
       });
   };
 
