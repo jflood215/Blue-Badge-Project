@@ -27,12 +27,12 @@ const MacroCreate = () => {
     if (height > 1 && gender === "Male") {
       return Math.round(
         (4.536 * weight + 15.88 * height - 5 * age + 5) * activity + +goal
-      );
+      ); // Mifflin St. Jeor formula for calculating caloric needs for males
     }
     if (height > 1 && gender === "Female") {
       return Math.round(
         (4.536 * weight + 15.88 * height - 5 * age - 161) * activity + +goal
-      );
+      ); // Mifflin St. Jeor formula for females
     }
   };
 
@@ -103,6 +103,9 @@ const MacroCreate = () => {
                 />
               </div>
             </FormGroup>
+
+            {/* Height Input Field */}
+
             <FormGroup>
               <Label for="Height">Height:</Label>
               <Input
@@ -118,6 +121,9 @@ const MacroCreate = () => {
               />
               {/* <FormText>Enter your height in inches.</FormText> */}
             </FormGroup>
+
+                {/* Weight Input Field */}
+
             <FormGroup>
               <Label for="Weight">Weight:</Label>
               <Input
@@ -132,6 +138,8 @@ const MacroCreate = () => {
               />
             </FormGroup>
 
+                {/* Age Input Field */}
+
             <FormGroup>
               <Label for="Age">Age:</Label>
               <Input
@@ -145,6 +153,9 @@ const MacroCreate = () => {
                 value={age}
               />
             </FormGroup>
+
+                {/* Activity Level Selection */}
+
             <FormGroup>
               <Label for="Activity">Activity Level:</Label>
               <div className="concise">
@@ -194,6 +205,9 @@ const MacroCreate = () => {
                 />
               </div>
             </FormGroup>
+
+                  {/* Modifying caloric intake based off goal */}
+
             <FormGroup>
               <Label for="exampleCheckbox2">What is your goal?</Label>
               <div className="concise">

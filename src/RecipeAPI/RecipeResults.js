@@ -9,13 +9,13 @@ import {
   Button,
 } from "reactstrap";
 
-const RecipeResults = (props) => {
-  const { label, image } = props.food;
-  return (
-    <div>
+// const RecipeResults = (props) => {
+//   const { label, image } = props.food;
+//   return (
+//     <div>
       
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
 export default RecipeResults;
