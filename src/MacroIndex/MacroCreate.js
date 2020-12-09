@@ -91,7 +91,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="gender"
+                  id="genderMale"
                   name="genderRadio"
                   label="Male"
                   value="Male"
@@ -102,7 +102,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="gender"
+                  id="genderFemale"
                   name="genderRadio"
                   label="Female"
                   value="Female"
@@ -171,7 +171,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="activity"
+                  id="activityNone"
                   name="activityRadio"
                   label="None"
                   value="1.2" // Activity modifier
@@ -182,7 +182,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="activity"
+                  id="activityLow"
                   name="activityRadio"
                   label="Low"
                   value="1.375"
@@ -193,7 +193,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="activity"
+                  id="activityModerate"
                   name="activityRadio"
                   label="Medium"
                   value="1.55"
@@ -204,7 +204,7 @@ const MacroCreate = () => {
                     setActivity(e.target.value);
                   }}
                   type="radio"
-                  id="activity"
+                  id="activityHigh"
                   name="activityRadio"
                   label="High"
                   value="1.725"
@@ -223,7 +223,7 @@ const MacroCreate = () => {
                     setGoal(e.target.value);
                   }}
                   type="radio"
-                  id="goal"
+                  id="goalGain"
                   name="goalRadio"
                   label="Gain Weight/Muscle"
                   value="250"
@@ -234,7 +234,7 @@ const MacroCreate = () => {
                     setGoal(e.target.value);
                   }}
                   type="radio"
-                  id="goal"
+                  id="goalMaintain"
                   name="goalRadio"
                   label="Maintain Weight"
                   value="0"
@@ -245,7 +245,7 @@ const MacroCreate = () => {
                     setGoal(e.target.value);
                   }}
                   type="radio"
-                  id="goal"
+                  id="goalLose"
                   name="goalRadio"
                   label="Lose Weight/Fat"
                   value="-500"
