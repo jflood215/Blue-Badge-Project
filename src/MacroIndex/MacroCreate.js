@@ -91,7 +91,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="exampleCustomRadio5"
+                  id="gender"
                   name="genderRadio"
                   label="Male"
                   value="Male"
@@ -102,7 +102,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="exampleCustomRadio6"
+                  id="gender"
                   name="genderRadio"
                   label="Female"
                   value="Female"
@@ -113,7 +113,7 @@ const MacroCreate = () => {
             {/* Height Input Field */}
 
             <FormGroup>
-              <Label for="Height">Height:</Label>
+              <Label for="height">Height:</Label>
               <Input
                 onChange={(e) => {
                   setHeight(e.target.value);
@@ -131,7 +131,7 @@ const MacroCreate = () => {
                 {/* Weight Input Field */}
 
             <FormGroup>
-              <Label for="Weight">Weight:</Label>
+              <Label for="weight">Weight:</Label>
               <Input
                 onChange={(e) => {
                   setWeight(e.target.value);
@@ -147,7 +147,7 @@ const MacroCreate = () => {
                 {/* Age Input Field */}
 
             <FormGroup>
-              <Label for="Age">Age:</Label>
+              <Label for="age">Age:</Label>
               <Input
                 onChange={(e) => {
                   setAge(e.target.value);
@@ -163,7 +163,7 @@ const MacroCreate = () => {
                 {/* Activity Level Selection */}
 
             <FormGroup>
-              <Label for="Activity">Activity Level:</Label>
+              <Label for="activity">Activity Level:</Label>
               <div className="concise">
                 <CustomInput
                   onClick={(e) => {
@@ -171,7 +171,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="exampleCustomRadio"
+                  id="activity"
                   name="activityRadio"
                   label="None"
                   value="1.2" // Activity modifier
@@ -182,7 +182,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="exampleCustomRadio2"
+                  id="activity"
                   name="activityRadio"
                   label="Low"
                   value="1.375"
@@ -193,7 +193,7 @@ const MacroCreate = () => {
                   }}
                   inline
                   type="radio"
-                  id="exampleCustomRadio3"
+                  id="activity"
                   name="activityRadio"
                   label="Medium"
                   value="1.55"
@@ -204,7 +204,7 @@ const MacroCreate = () => {
                     setActivity(e.target.value);
                   }}
                   type="radio"
-                  id="exampleCustomRadio4"
+                  id="activity"
                   name="activityRadio"
                   label="High"
                   value="1.725"
@@ -215,7 +215,7 @@ const MacroCreate = () => {
                   {/* Modifying caloric intake based off goal */}
 
             <FormGroup>
-              <Label for="exampleCheckbox2">What is your goal?</Label>
+              <Label for="goal">What is your goal?</Label>
               <div className="concise">
                 <CustomInput
                   inline
@@ -223,7 +223,7 @@ const MacroCreate = () => {
                     setGoal(e.target.value);
                   }}
                   type="radio"
-                  id="exampleCustomRadio8"
+                  id="goal"
                   name="goalRadio"
                   label="Gain Weight/Muscle"
                   value="250"
@@ -234,7 +234,7 @@ const MacroCreate = () => {
                     setGoal(e.target.value);
                   }}
                   type="radio"
-                  id="exampleCustomRadio9"
+                  id="goal"
                   name="goalRadio"
                   label="Maintain Weight"
                   value="0"
@@ -245,7 +245,7 @@ const MacroCreate = () => {
                     setGoal(e.target.value);
                   }}
                   type="radio"
-                  id="exampleCustomRadio7"
+                  id="goal"
                   name="goalRadio"
                   label="Lose Weight/Fat"
                   value="-500"
