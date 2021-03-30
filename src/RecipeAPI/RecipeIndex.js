@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import RecipeResults from "./RecipeResults";
 import {
   Container,
   Row,
@@ -15,17 +14,16 @@ import {
   CardTitle,
   CardText,
   CardSubtitle,
-  CardColumns,
   FormText,
-  CardDeck,
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import MacroCreate from "../MacroIndex/MacroCreate";
 import "../../src/App.css";
 
+console.log(process.env.REACT_APP_API_ID);
+console.log(process.env.REACT_APP_API_KEY);
+
 const fetchURL = "https://api.edamam.com/search";
-const app_key = "92d4064d96f5e0819daf5f490bc7b323";
-const app_id = "f3808d48";
+let REACT_APP_API_KEY = '92d4064d96f5e0819daf5f490bc7b323'
+let REACT_APP_API_ID = 'f3808d48'
 
 const RecipeIndex = () => {
   const [search, setSearch] = useState("");
@@ -36,12 +34,9 @@ const RecipeIndex = () => {
   const [fetchComplete, setFetchComplete] = useState(false);
 
   const fetchResults = () => {
-    let url = `${fetchURL}?q=${search}&app_id=${app_id}&app_key=${app_key}&from=0&to=2&ingr=7`;
+    let url = `${fetchURL}?q=${search}&app_id=${REACT_APP_API_ID}&app_key=${REACT_APP_API_KEY}&from=0&to=2&ingr=7`;
 
     url = minCals && maxCals ? url + `&calories=${minCals}-${maxCals}` : url;
-    // url = maxCals ? url + `&calories=${maxCals}` : url;
-
-    // https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&calories=591-722
 
     fetch(url)
       .then((res) => res.json())
@@ -58,11 +53,6 @@ const RecipeIndex = () => {
     event.preventDefault();
     fetchResults();
   };
-
-  //   function displayCards() {
-  //     return results.map((result, index) => (
-  //       <RecipeResults key={index} food={result} />
-  //     ));
 
   return (
     <div className="main">
@@ -150,7 +140,6 @@ const RecipeIndex = () => {
                   <CardBody>
                     <CardTitle>{results.recipe.label}</CardTitle>
                     <CardSubtitle>
-                      {/* {results.recipe.dietLabels.join(", ")} */}
                     </CardSubtitle>
                     <CardText></CardText>
                     <Button
@@ -181,9 +170,7 @@ const RecipeIndex = () => {
                   <CardBody>
                     <CardTitle>{resultsTwo.recipe.label}</CardTitle>
                     <CardSubtitle>
-                      {/* {resultsTwo.recipe.healthLabels.join(", ")} */}
                     </CardSubtitle>
-                    {/* <CardText> {results.recipe.dietLabels.join(", ")}</CardText> */}
                     <Button
                       color="primary"
                       href={resultsTwo.recipe.url}

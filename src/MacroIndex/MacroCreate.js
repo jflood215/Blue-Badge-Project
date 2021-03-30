@@ -22,6 +22,7 @@ const MacroCreate = () => {
   const [activity, setActivity] = useState(1.2);
   const [goal, setGoal] = useState(0);
   const [gender, setGender] = useState(true);
+  
 
   const calories = () => {
     if (height > 1 && gender === "Male") {
