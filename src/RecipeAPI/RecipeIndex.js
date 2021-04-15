@@ -18,12 +18,7 @@ import {
 } from "reactstrap";
 import "../../src/App.css";
 
-console.log(process.env.REACT_APP_API_ID);
-console.log(process.env.REACT_APP_API_KEY);
-
 const fetchURL = "https://api.edamam.com/search";
-let REACT_APP_API_KEY = '92d4064d96f5e0819daf5f490bc7b323'
-let REACT_APP_API_ID = 'f3808d48'
 
 const RecipeIndex = () => {
   const [search, setSearch] = useState("");
@@ -34,7 +29,7 @@ const RecipeIndex = () => {
   const [fetchComplete, setFetchComplete] = useState(false);
 
   const fetchResults = () => {
-    let url = `${fetchURL}?q=${search}&app_id=${REACT_APP_API_ID}&app_key=${REACT_APP_API_KEY}&from=0&to=2&ingr=7`;
+    let url = `${fetchURL}?q=${search}&app_id=${process.env.REACT_APP_API_ID}&app_key=${process.env.REACT_APP_API_KEY}&from=0&to=2&ingr=7`;
 
     url = minCals && maxCals ? url + `&calories=${minCals}-${maxCals}` : url;
 

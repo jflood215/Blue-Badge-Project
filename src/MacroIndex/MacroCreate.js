@@ -260,14 +260,11 @@ const MacroCreate = () => {
             <ul>
               <li>Calories: {calories()} per day</li>
               <li>Fat: {fat()} grams per day </li>
-              <li>Carbs: {carbs()} grams per day </li>
+              <li>Carbs: {carbs()} grams per day
+               </li>
               <li>Protein: {protein()} grams per day</li>
             </ul>
           </Form>
-
-          {/* <Button color="primary" type="submit">
-            Click to Submit
-          </Button> */}
         </Col>
         <Col sm="3 pt-5">
           <div className="p-2 my-2 rounded">
