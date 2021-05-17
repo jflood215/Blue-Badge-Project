@@ -9,7 +9,26 @@
 - Search for recipes in any calorie range you'd like
 - Track your weight and progress over time
 
+## Screenshots of what you'll see while using this application:
+
+### Login/Signup
+
+![Login:Signup](https://imgur.com/jZHxbuM.png)
+
+### Calorie & Macro Calculator
+
+![Calorie & Macro Calculator]()
+
+### Recipe API
+
+![Recipe API]()
+
+### Weight Tracker
+
+![Weight Tracker]()
+
 <hr />
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
