@@ -1,3 +1,16 @@
+# Macros Made Easy
+
+### Welcome to my first full stack project ever! This project was created by using React and Bootstrap on the front-end, along with the Edamam API. The backend utilizes Node.js, Sequelize, Express, and PostgreSQL.
+
+### Features of the app:
+
+- Register an account to login and use the app
+- Calculate recommended calories and macro nutrients based on your goals
+- Search for recipes in any calorie range you'd like
+- Track your weight and progress over time
+
+<hr />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
