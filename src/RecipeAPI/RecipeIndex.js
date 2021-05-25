@@ -18,7 +18,7 @@ import {
 } from "reactstrap";
 import "../../src/App.css";
 
-const fetchURL = "https://api.edamam.com/search";
+const fetchURL = "https://efa-cors-anywhere.herokuapp.com/https://api.edamam.com/search";
 
 const RecipeIndex = () => {
   const [search, setSearch] = useState("");

@@ -17,7 +17,7 @@
 
 ### Calorie & Macro Calculator
 
-![Calorie & Macro Calculator]()
+![Calorie & Macro Calculator](https://imgur.com/lJaZChI.png)
 
 ### Recipe API
 
@@ -28,7 +28,6 @@
 ![Weight Tracker]()
 
 <hr />
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
