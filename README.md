@@ -15,17 +15,23 @@
 
 ![Login:Signup](https://imgur.com/jZHxbuM.png)
 
+<br />
+
 ### Calorie & Macro Calculator
 
 ![Calorie & Macro Calculator](https://imgur.com/lJaZChI.png)
 
+<br />
+
 ### Recipe API
 
-![Recipe API]()
+![Recipe API](https://imgur.com/PuVPptx.png)
+
+<br />
 
 ### Weight Tracker
 
-![Weight Tracker]()
+![Weight Tracker](https://imgur.com/z6qAhSr)
 
 <hr />
 
