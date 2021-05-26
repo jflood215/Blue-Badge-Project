@@ -31,7 +31,7 @@
 
 ### Weight Tracker
 
-![Weight Tracker](https://imgur.com/z6qAhSr)
+![Weight Tracker](https://imgur.com/z6qAhSr.png)
 
 <hr />
 
